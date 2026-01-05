@@ -59,7 +59,7 @@ const Header: React.FC = () => {
 }`}>
   <span>THALASEER AGAM</span>
   {/* <span> தளசீர் அகம் </span> */}
-  <span className="text-orange-600">Construction</span>
+  <span className="text-orange-600">Constructio</span>
   {/* <span className="text-orange-600"> கட்டுமானம் </span> */}
 </span>
 
