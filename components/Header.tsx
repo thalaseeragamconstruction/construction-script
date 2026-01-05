@@ -46,7 +46,7 @@ const Header: React.FC = () => {
               <img 
               // src="/Images/WhatsApp Image 2026-01-05 at 6.51.38 PM.jpeg" 
               // src="/Images/WhatsApp Image 2026-01-05 at 6.51.37 PM.jpeg" 
-              src="Images/LogoBlack.jpeg" 
+              src="LogoBlack.jpeg" 
               className="text-white w-15 h-20" />
             </div>
             {/* <span className={`text-xl font-bold font-display tracking-tight ${
