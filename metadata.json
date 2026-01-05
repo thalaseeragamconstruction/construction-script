@@ -1,0 +1,8 @@
+
+{
+  "name": "Apex Structures - Construction & Engineering",
+  "description": "A premium, high-performance website for a civil engineering and construction firm, featuring an AI-powered project consultant.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
