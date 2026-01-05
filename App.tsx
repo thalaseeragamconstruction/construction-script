@@ -38,7 +38,7 @@ const App: React.FC = () => {
         <div className="absolute inset-0">
           <img 
             // src="/Images/WhatsApp Image 2026-01-05 at 7.28.41 PM.jpeg"
-            src="/construction-script/Images/WhatsApp Image 2026-01-05 at 10.12.15 PM.jpeg"
+            src="Images/WhatsApp Image 2026-01-05 at 10.12.15 PM.jpeg"
             alt="Construction background" 
             className="w-full h-full object-cover brightness-[0.4]"
           />
@@ -327,7 +327,7 @@ const App: React.FC = () => {
               <img 
               // src="/Images/WhatsApp Image 2026-01-05 at 6.51.38 PM.jpeg" 
               // src="/Images/WhatsApp Image 2026-01-05 at 6.51.37 PM.jpeg" 
-              src="/construction-script/Images/LogoBlack.jpeg" 
+              src="Images/LogoBlack.jpeg" 
               className="text-white" />
             </div>
                 <span className="text-2xl font-bold font-display">THALASEER AGAM <span className="text-orange-600">Construction</span></span>
