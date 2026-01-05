@@ -5,6 +5,7 @@ import AIConsultant from './components/AIConsultant';
 import ContactForm from './components/ContactForm';
 import ProjectModal from './components/ProjectModal';
 import { SERVICES, PROJECTS } from './constants';
+
 import { Project } from './types';
 import { 
   ChevronRight, Phone, Mail, MapPin, Instagram, Linkedin, Twitter, ArrowRight,
