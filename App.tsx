@@ -8,7 +8,13 @@ import { SERVICES, PROJECTS } from './constants';
 
 import { Project } from './types';
 import { 
-  ChevronRight, Phone, Mail, MapPin, Instagram, Linkedin, Twitter, ArrowRight,
+  ChevronRight, Phone, Mail, MapPin, Instagram, Linkedin, Twitter, ArrowRight,  CheckCircle,
+  Building2,
+  Layers,
+  Zap,
+  Droplet,
+  LayoutGrid,
+  Paintbrush
 } from 'lucide-react';
 
 
@@ -22,6 +28,48 @@ const App: React.FC = () => {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const PRICING_MODELS = [
+    {
+      id: 1,
+      title: "Prime",
+      rate: "₹2,100 – ₹2,300 / sq.ft",
+      features: [
+        "Standard RCC framed structure",
+        "ISI approved cement & steel",
+        "Basic electrical wiring & switches",
+        "Standard plumbing fittings",
+        "Vitrified tile flooring",
+        "Flush doors & aluminum windows"
+      ]
+    },
+    {
+      id: 2,
+      title: "Prime Plus",
+      rate: "₹2,300 – ₹2,500 / sq.ft",
+      features: [
+        "Enhanced RCC structural design",
+        "Premium branded cement & steel",
+        "Modular switches & concealed wiring",
+        "Premium plumbing fixtures",
+        "Granite / premium vitrified flooring",
+        "Designer doors & UPVC windows"
+      ]
+    },
+    {
+      id: 3,
+      title: "Luxury",
+      rate: "₹2,600 – ₹3,000+ / sq.ft",
+      features: [
+        "Advanced structural & architectural design",
+        "Top-tier construction materials",
+        "Smart electrical & lighting systems",
+        "High-end sanitary & plumbing fittings",
+        "Marble / wooden / designer flooring",
+        "Custom interiors & premium finishes"
+      ]
+    }
+  ];
+
 
   return (
     <div className="relative min-h-screen">
@@ -119,6 +167,70 @@ const App: React.FC = () => {
         </div>
       </section>
 
+
+      {/* Price Section */}
+
+      <section id="pricing" className="py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-4">
+
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-blue-600 font-bold tracking-widest text-sm mb-4">
+        CONSTRUCTION MODELS
+      </h2>
+      <h3 className="text-4xl font-bold text-slate-900 font-display">
+        Square Feet Based Pricing
+      </h3>
+    </div>
+
+    {/* Cards */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {PRICING_MODELS.map((model) => (
+        <div
+          key={model.id}
+          className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-orange-200 hover:shadow-2xl transition-all group"
+        >
+          {/* Icon */}
+          <div className="mb-6 group-hover:scale-110 transition-transform">
+            {model.title === "Prime" && (
+              <Building2 size={40} className="text-orange-600" />
+            )}
+            {model.title === "Prime Plus" && (
+              <Layers size={40} className="text-orange-600" />
+            )}
+            {model.title === "Luxury" && (
+              <Paintbrush size={40} className="text-orange-600" />
+            )}
+          </div>
+
+          {/* Title */}
+          <h4 className="text-xl font-bold mb-1 font-display text-slate-900">
+            {model.title}
+          </h4>
+
+          {/* Rate */}
+          <p className="text-orange-600 font-bold mb-6">
+            {model.rate}
+          </p>
+
+          {/* Features */}
+          <ul className="space-y-3 text-slate-600">
+            {model.features.map((feature, index) => (
+              <li key={index} className="flex gap-3">
+                <CheckCircle size={18} className="text-orange-600 mt-1" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+
+
       {/* About Section */}
       {/* <section id="about" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
@@ -157,6 +269,8 @@ const App: React.FC = () => {
           </div>
         </div>
       </section> */}
+
+
 
       {/* Projects Section */}
       <section id="projects" className="py-24 bg-slate-50">
@@ -198,49 +312,84 @@ const App: React.FC = () => {
         </div>
       </section>
 
+
+
       {/* AI Section Integration */}
       {/* <AIConsultant /> */}
 
-      {/* Contact Section */}
-      <section id="contact" className="py-24 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="bg-slate-900 rounded-[2.5rem] p-8 md:p-16 text-white grid lg:grid-cols-2 gap-16 items-center">
+     
+     {/* Contact Section */}
+<section id="contact" className="py-24 bg-white relative overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 relative z-10">
+
+    {/* Section Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-blue-600 font-bold tracking-widest text-sm mb-4">
+        CONTACT US
+      </h2>
+      <h3 className="text-4xl font-bold text-slate-900 font-display">
+        Get in Touch With Our Team
+      </h3>
+    </div>
+
+    {/* Contact Card */}
+    <div className="bg-slate-900 rounded-[2.5rem] p-8 md:p-16 text-white grid lg:grid-cols-2 gap-16 items-center">
+      
+      <div>
+        <h3 className="text-4xl md:text-5xl font-bold font-display mb-6">
+          Let's build your <br /> vision together
+        </h3>
+
+        <p className="text-slate-400 text-lg mb-10">
+          Ready to discuss your project? Our engineering team is standing by to
+          provide expert consultation and budgeting.
+        </p>
+
+        <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-orange-500">
+              <Phone size={24} />
+            </div>
             <div>
-              <h3 className="text-4xl md:text-5xl font-bold font-display mb-6">Let's build your <br /> vision together</h3>
-              <p className="text-slate-400 text-lg mb-10">
-                Ready to discuss your project? Our engineering team is standing by to provide expert consultation and budgeting.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-orange-500">
-                    <Phone size={24} />
-                  </div>
-                  <div>
-                    <div className="text-sm text-slate-500 font-bold">Call Us</div>
-                    <div className="text-lg font-bold hover:text-orange-500 transition-colors cursor-pointer">+91 - 9025268147</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-orange-500">
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <div className="text-sm text-slate-500 font-bold">Email Us</div>
-                    <div className="text-lg font-bold hover:text-orange-500 transition-colors cursor-pointer">thalaseeragamconstruction@gmail.com</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-orange-500">
-                    <MapPin size={24} />
-                  </div>
-                  <div>
-                    <div className="text-sm text-slate-500 font-bold">Office</div>
-                    <div className="text-lg font-bold">Velachery , Chennai</div>
-                  </div>
-                </div>
+              <div className="text-sm text-slate-500 font-bold">Call Us</div>
+              <div className="text-lg font-bold hover:text-orange-500 transition-colors cursor-pointer">
+                +91 - 9025268147
               </div>
             </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-orange-500">
+              <Mail size={24} />
+            </div>
+            <div>
+              <div className="text-sm text-slate-500 font-bold">Email Us</div>
+              <div className="text-lg font-bold hover:text-orange-500 transition-colors cursor-pointer">
+                thalaseeragamconstruction@gmail.com
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-orange-500">
+              <MapPin size={24} />
+            </div>
+            <div>
+              <div className="text-sm text-slate-500 font-bold">Office</div>
+              <div className="text-lg font-bold">
+                Velachery, Chennai
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ContactForm />
+    </div>
+  </div>
+</section>
+
+
 
             {/* <form className="bg-white rounded-3xl p-8 text-slate-900 shadow-2xl" onSubmit={(e) => { e.preventDefault(); alert('Thank you for your inquiry! Our engineers will contact you within 24 hours.'); }}>
               <div className="grid grid-cols-2 gap-6 mb-6">
@@ -307,11 +456,94 @@ const App: React.FC = () => {
               <button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white py-4 rounded-xl font-bold transition-all transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-orange-600/20">
                 Send Inquiry
               </button>
-</form> */}
+</form> 
 <ContactForm/>
           </div>
         </div>
-      </section>
+      </section>*/}
+
+{/* About Section */}
+<section id="about" className="py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+
+    {/* Image */}
+    <div className="relative">
+      <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000"
+          alt="Construction Work"
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    {/* About Section */}
+    <div>
+      <h2 className="text-blue-600 font-bold tracking-widest text-sm mb-4">
+        ABOUT US
+      </h2>
+
+      <h3 className="text-4xl font-bold text-slate-900 font-display mb-8">
+        Building Trust Through Quality Construction
+      </h3>
+
+      <ul className="space-y-4 text-slate-700 text-lg leading-relaxed">
+        <li className="flex items-start gap-3">
+          <span className="text-orange-600 font-bold">➤</span>
+          <span>
+            Thalaseeragam Construction is a growing construction company focused
+            on quality building work.
+          </span>
+        </li>
+
+        <li className="flex items-start gap-3">
+          <span className="text-orange-600 font-bold">➤</span>
+          <span>
+            We undertake residential and small commercial construction works.
+          </span>
+        </li>
+
+        <li className="flex items-start gap-3">
+          <span className="text-orange-600 font-bold">➤</span>
+          <span>
+            Our goal is to deliver strong structures with good workmanship.
+          </span>
+        </li>
+
+        <li className="flex items-start gap-3">
+          <span className="text-orange-600 font-bold">➤</span>
+          <span>
+            We pay close attention to client requirements and site safety.
+          </span>
+        </li>
+
+        <li className="flex items-start gap-3">
+          <span className="text-orange-600 font-bold">➤</span>
+          <span>
+            Quality materials and proper supervision are our priorities.
+          </span>
+        </li>
+
+        <li className="flex items-start gap-3">
+          <span className="text-orange-600 font-bold">➤</span>
+          <span>
+            We are committed to growing through trust and consistent performance.
+          </span>
+        </li>
+      </ul>
+
+      <button
+        onClick={scrollToContact}
+        className="mt-10 bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-orange-600 transition-colors"
+      >
+        Contact Us
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
 
       {/* Footer */}
       <footer className="bg-slate-950 text-white pt-20 pb-10">
