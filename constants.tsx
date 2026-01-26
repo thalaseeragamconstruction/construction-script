@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
     id: 1,
     title: 'Nandambakam Site View',
     category: 'Civil',
-    image: '/construction-script/Images/WhatsApp Image 2026-01-05 at 7.28.42 PM (2).jpeg',
+    image: 'WhatsApp Image 2026-01-05 at 7.28.42 PM (2).jpeg',
     description: 'In Progress Constrction:'
   },
   // {
